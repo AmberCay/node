@@ -1,6 +1,7 @@
-import { writeFile, readFile } from 'fs';
-import * as readline from 'node:readline/promises';
-import { stdin as input, stdout as output } from 'node:process';
+const fs = require("fs");
+var readline = require("readline");
+
+var rl = readline.createInterface(process.stdin, process.stdout);
 
 // console.log('Mensaje 1');
 // setTimeout(function() {
@@ -8,23 +9,21 @@ import { stdin as input, stdout as output } from 'node:process';
 //     console.log('Mensaje 3');
 // }, 3000);
 
-let user = {name: '',
-            surname: '',
-            age: ''};
+let user = { name: "", surname: "", age: 0 };
 
-const rl = readline.createInterface({ input, output });
-
-user.name = await rl.question('What is your name?: ');
-user.surname = await rl.question('What is your surname?: ');
-user.age = await rl.question('What is your age?: ');
-
-writeFile('user.json', JSON.stringify(user), (err) => {
-    if (err) throw err;
-    console.log('the file has been saved')
-    readFile('user.json', (err, data) => {
-    if (err) throw err;
-    let newUser = JSON.parse(data);
-    console.log(newUser);
+rl.question("what is your name?: ", (name) => {
+  rl.question("what is your surname?: ", (surname) => {
+    rl.question("what is your age?: ", (age) => {
+      let newUser = { name, surname, age };
+      fs.writeFile("user.json", JSON.stringify(newUser), (err) => {
+        if (err) throw err;
+        console.log("the file has been saved");
+        fs.readFile("user.json", (err, data) => {
+          if (err) throw err;
+          let newUser = JSON.parse(data);
+          console.log(newUser);
+        });
+      });
+    });
+  });
 });
-});
-
