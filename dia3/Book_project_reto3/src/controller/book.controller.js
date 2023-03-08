@@ -1,4 +1,4 @@
-import { Book } from "../models/book"
+const Book = require('../models/book');
 
 let books =  [];
 // new Book(1,1,'Candide', 'Soft Cover', 'Voltaire', 13, 'ger');
@@ -38,7 +38,7 @@ function postBook(req, res) {
     else if (foundbook === undefined) {
         books.push(new Book(req.body.id_book, req.body.id_user, req.body.title, req.body.type, req.body.author, req.body.price, req.body.photo)) 
 
-        answer = {error: false, code: 200, message: 'Book was added to', data: books};
+        answer = {error: false, code: 200, message: 'Book was added to list', data: books};
     }
     else {
         answer = {error: true, code: 200, message: 'Book already exists in the list'}
@@ -47,18 +47,16 @@ function postBook(req, res) {
 }
 
 function putBook(req, res) {
-    let id = req.query.id
     let answer
-    let index = books.findIndex(book => book.id_book == id);
+    let index = books.findIndex(book => book.id_book == req.body.id_book);
     if (index != -1) {
-        books[index].id_book = req.body.id_book
         books[index].id_user = req.body.id_user
         books[index].title = req.body.title
         books[index].type = req.body.type
         books[index].author = req.body.author
         books[index].price = req.body.price
         books[index].photo = req.body.photo
-        answer = {error: false, code: 200, message: 'Book edited', data: book[index]}
+        answer = {error: false, code: 200, message: 'Book edited', data: books[index]}
     }
     else if (index =-1) {
         answer = {error: true, code: 200, message: 'The book does not exist', data: books};
@@ -70,9 +68,8 @@ function putBook(req, res) {
 }
 
 function delBook(req, res) {
-    let id = req.query.id
     let answer
-    let index = books.findIndex(book => book.id_book == id);
+    let index = books.findIndex(book => book.id_book == req.body.id_book);
     if (index != -1) {
         books.splice(index, 1)
         answer = {error: false, code: 200, message: 'Book deleted', data: books};

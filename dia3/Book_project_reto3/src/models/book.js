@@ -1,4 +1,4 @@
-export class Book {
+class Book {
     // constructor
 
     constructor(id_book = 0, id_user = 0, title, type, author, price, photo) {
@@ -11,3 +11,5 @@ export class Book {
         this.photo = photo
     }
 };
+
+module.exports = Book
