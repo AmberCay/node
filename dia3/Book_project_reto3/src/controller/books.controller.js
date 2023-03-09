@@ -32,10 +32,7 @@ function postBook(req, res) {
     let foundbook = books.find(book => book.id_book == id)
     let answer;
 
-    if (books.length = 0) {
-        answer = {error: true, code: 200, message: 'There are no books'}
-    }
-    else if (foundbook === undefined) {
+    if (foundbook === undefined) {
         books.push(new Book(req.body.id_book, req.body.id_user, req.body.title, req.body.type, req.body.author, req.body.price, req.body.photo)) 
 
         answer = {error: false, code: 200, message: 'Book was added to list', data: books};
