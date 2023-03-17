@@ -1,7 +1,7 @@
 const Book = require('../models/book');
 
 let books =  [];
-// new Book(1,1,'Candide', 'Soft Cover', 'Voltaire', 13, 'ger');
+books.push(new Book(1,1,'Candide', 'Soft Cover', 'Voltaire', 13, 'https://i.thenile.io/r1000/9781500252663.jpg?r=5e296e8146549'))
 
 function getStart(req, res) {
     let answer = {error: true, code:200, message: 'Starting point'};
@@ -11,18 +11,19 @@ function getStart(req, res) {
 function getBooks(req, res) {
 
     let id = req.query.id
+    console.log(req.query);
     let foundBook = books.find(book => book.id_book == id)
     let answer;
     if (books.length != 0 && (!id || foundBook != undefined )) {
         if (foundBook != undefined) {
-            answer = {error: false, code: 200, data: foundBook};
+            answer = {error: false, code: 200, data: [foundBook]};
         }
         else {
-            answer = {error: false, code: 200, data: books};
+            answer = {error: true, code: 200, message: 'That book id does not exist', data: books};
         }
     }
     else {
-        answer = {error: true, code: 200, message: 'No books exist'};
+        answer = {error: true, code: 200, message: 'No books exist', data:books};
     }
     res.send(answer);
 }
@@ -55,7 +56,7 @@ function putBook(req, res) {
         books[index].photo = req.body.photo
         answer = {error: false, code: 200, message: 'Book edited', data: books[index]}
     }
-    else if (index =-1) {
+    else if (index = -1) {
         answer = {error: true, code: 200, message: 'The book does not exist', data: books};
     }
     else {
