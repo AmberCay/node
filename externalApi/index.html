@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>PokeApi</title>
+</head>
+
+<body>
+    <main>
+        <h1>Poke-App</h1>
+        <section>
+            <form action="">
+                <input type="text" name="Pokemon" id="searchBar" placeholder="Pokemon">
+                <button id="searchButton" type="button" onclick="search(searchBar)">Search</button>
+            </form>
+            <div class="poke-card">
+                <div class="top">
+                    <div class="card-top">
+                        <h2 id="poke-name">Popplio</h2>
+                        <span id="number">#231</span>
+                    </div>
+                    <div class="poke-pic-area">
+                        <img id="poke-img" class="poke-img" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/85a954df-43b3-4b66-9e8d-94fe01b0451f/da24fjw-e10d0cb5-c279-4c3b-972b-8967f0d883c7.png/v1/fill/w_948,h_843,strp/popplio_anime_artwork_by_tzblacktd_da24fjw-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTMwNSIsInBhdGgiOiJcL2ZcLzg1YTk1NGRmLTQzYjMtNGI2Ni05ZThkLTk0ZmUwMWIwNDUxZlwvZGEyNGZqdy1lMTBkMGNiNS1jMjc5LTRjM2ItOTcyYi04OTY3ZjBkODgzYzcucG5nIiwid2lkdGgiOiI8PTE0NjkifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.uXya1bKIFzkxPkFj8fHBlKxO3HgGEbSJzltT129Giv4"
+                            alt="">
+                    </div>
+                </div>
+                <div class="poke-data">
+                    <div class="types">
+                        <span class="type" style="background-color: rgb(100, 147, 235);">Water</span>
+                        <span class="type" style="background-color: rgb(230, 158, 172);">Fairy</span>
+                    </div>
+                    <div class="moves">
+                        <span class="move">move</span>
+                        <span class="move">move</span>
+                        <span class="move">move</span>
+                        <span class="move">move</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="pokemon.js"></script>
+</body>
+
+</html>

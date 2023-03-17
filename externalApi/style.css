@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+main {
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url('../assets/vecteezy_fairy-pokemon-pattern_14022433.jpg');
+    background-size: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    color: #644ae2;
+    font-size: 4rem;
+    text-shadow: 4px 3px 0px #131459;
+}
+
+form {
+    background-color: #001a6c;
+    height: 4rem;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 2rem;
+}
+
+input {
+    background-color: #644ae2;
+    border: none;
+    border-radius: 2rem;
+    height: 2rem;
+    padding-left: 1rem;
+    color: #faebf2;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+button {
+    background-color: #faebf2;
+    border: none;
+    height: 2rem;
+    width: 20%;
+    border-radius: 2rem;
+    color: #644ae2;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.poke-card {
+    width: 22rem;
+    height: 35rem;
+    background-color: #13831b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+}
+
+.top {
+    width: 100%;
+    height:40%;
+    padding: 0.5rem;
+    background: url(../assets/pokeball.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.poke-pic-area {
+    z-index: 9;
+}
+
+.poke-img {
+    width: 200px;
+    height: 200px;
+    transform: translateY(2rem);
+}
+
+.poke-data {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding-top: 6rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.types {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.type {
+    background-color: #001a6c;
+    color: white;
+    padding: 0.12rem 0.6rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.moves {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.move {
+    background-color: #001a6c;
+    border-radius: 2rem;
+}
